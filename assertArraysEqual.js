@@ -1,7 +1,8 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function(actual, expected) {
+const eqArrays = require('./eqArrays');
+
+const assertArraysEqual = function(actual, expected) {
   //if values match it should print console log with Assertion Passed
-  if (actual === expected) {
+  if (eqArrays(actual, expected)) {
     return console.log(`✅✅✅Assertion Passed: ${actual} ===${expected}`);
   // if it does not match will print assertion failed
   } else if (actual !== expected) {
@@ -9,4 +10,4 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-module.exports = assertEqual;
+module.exports = assertArraysEqual

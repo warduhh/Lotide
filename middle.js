@@ -1,18 +1,19 @@
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    // console.log("Arrays not equal length")
-    return false;
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
+
+const middle = function(array) {
+  if (array.length < 3) {
+    return [];
+  } else if (array.length % 2 === 0) {
+    return array.slice(array.length / 2 - 1, array.length / 2 + 1)
+  } else {
+     let newArray = [];
+     let middleNum = Math.round(array.length /2)
+     newArray.push(array[middleNum -1]);
+     return newArray;
   }
-  for (let i = 0; i < array1.length; i++) {
-    if (Array.isArray(array1[i]) && (eqArrays(array1[i], array2[i]) === false)) {
-      // if it is an array && the arrays are not equal then return false;
-      return false;
-    }
-    if (!(Array.isArray(array1[i])) && array1[i] !== array2[i]) {
-      // if the element is not an array and the items are not equal then return false
-      return false;
-    }
-  } 
-  return true;
 };
 
+module.exports = middle;
+
+    
