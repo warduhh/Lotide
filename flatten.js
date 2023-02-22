@@ -38,3 +38,5 @@ function flatten(arr) {
 
 assertArraysEqual(flatten(1, 2, 3) , [5, 6, 7]);
 assertArraysEqual(flatten(1, 2, 3) , [1, 2, 3]);
+
+module.exports = flatten ;
