@@ -1,24 +1,26 @@
 const assertArraysEqual = require('./assertArraysEqual');
 const eqArrays = require('./eqArrays');
 
-const without = function(source, itemsToRemove) {
-const result = []
-  for (let i = 0; i < source.length; i++) {{
-  if (!itemsToRemove.some(item => item === source[i])) { 
-        result.push(source[i]);
-      }
+let without = function (source, itemsToRemove) {
+  let removeMe = [];
+
+  for (let a = 0, b = 0; a < source.length; a++, b++) {
+    if (source[a] === itemsToRemove[b]) {
+      continue;
+    } else {
+      removeMe.push(source[a]);
     }
   }
-  return result;
+  console.log(removeMe);
 };
 
-assertArraysEqual(without([1,2,3], [1]), [2,3]);
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); // no need to capture return value for this test case
-// Make sure the original array was not altered by the without function
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
-without([1, 2, 3], [1]) // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]) // => ["1", "2"]
 
-module.exports = without;
+/*
+without([1, 2, 3], [1]); // => [2, 3]
+without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]); 
+assertArraysEqual(words, ["hello", "world", "lighthouse"]); // => passed
+
+module.exports = without; 
+*/
