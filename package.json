@@ -1,6 +1,6 @@
 {
   "name": "@warda_/lotide",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "This is a library to learn how to create one",
   "main": "index.js",
   "directories": {
@@ -25,5 +25,6 @@
   },
   "dependencies": {
     "lotide": "^1.0.1"
-  }
+  },
+  "keywords": []
 }
