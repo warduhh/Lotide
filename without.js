@@ -1,7 +1,3 @@
-const { assert } = require('chai');
-const assertArraysEqual = require('./assertArraysEqual');
-const eqArrays = require('./eqArrays');
-
 const without = function(source, itemsToRemove) {
   let result = [];
 

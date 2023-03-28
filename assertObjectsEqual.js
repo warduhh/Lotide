@@ -1,4 +1,4 @@
-const eqArrays = require('./eqArrays');
+//const eqArrays = require('./eqArrays');
 const eqObjects = require('./eqObjects');
 
 const assertObjectsEqual = function (actual, expected) {
@@ -9,8 +9,8 @@ const assertObjectsEqual = function (actual, expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
 };
 
-const ab = { a: "1", b: "2" };
+/*const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
-assertObjectsEqual(ab, ba);
+assertObjectsEqual(ab, ba); */
 
 module.exports = assertObjectsEqual;
