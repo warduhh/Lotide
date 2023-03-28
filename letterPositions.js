@@ -9,10 +9,10 @@ const letterPositions = function(sentence) {
    return results;
   };
 
-const result = letterPositions("hello");
+/*const result = letterPositions("hello");
 assertEqual(result["h"], [0]);
 assertEqual(result["e"], [1]);
 assertEqual(result["l"], [2, 3]);
-assertEqual(result["o"], [4]);
+assertEqual(result["o"], [4]); */ 
 
 module.exports = letterPositions ;
