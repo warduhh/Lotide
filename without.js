@@ -1,26 +1,18 @@
+const { assert } = require('chai');
 const assertArraysEqual = require('./assertArraysEqual');
 const eqArrays = require('./eqArrays');
 
-let without = function (source, itemsToRemove) {
-  let removeMe = [];
+const without = function(source, itemsToRemove) {
+  let result = [];
 
-  for (let a = 0, b = 0; a < source.length; a++, b++) {
-    if (source[a] === itemsToRemove[b]) {
-      continue;
-    } else {
-      removeMe.push(source[a]);
+  for (let i = 0; i < source.length; i++) {
+    if (!itemsToRemove.includes(source[i])) {
+      result.push(source[i]);
     }
   }
-  console.log(removeMe);
+
+  return result;
 };
 
+module.exports = without;
 
-/*
-without([1, 2, 3], [1]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]); 
-assertArraysEqual(words, ["hello", "world", "lighthouse"]); // => passed
-
-module.exports = without; 
-*/

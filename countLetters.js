@@ -8,7 +8,6 @@ countLetters[letter] = countLetters[letter] ? (countLetters[letter] +1): 1;
 return countLetters;
 }
 
-
 const result = countLetters("lighthouse in the house");
 assertEqual(result["l"], 1);
 assertEqual(result["i"], 2);
